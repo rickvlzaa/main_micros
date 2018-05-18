@@ -8,7 +8,7 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: false}))
 
 app.use('/', (req, res) => {
-    res.send('hello from express')
+    res.send('Welcome to my page!')
 })
 
 app.listen(3000)
