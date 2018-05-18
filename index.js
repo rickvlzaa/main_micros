@@ -11,3 +11,5 @@ app.use('/', (req, res) => {
     res.send('hello from express')
 })
 
+app.listen(3000)
+
