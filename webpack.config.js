@@ -1,9 +1,11 @@
 const nodeExternals = require('webpack-node-externals')
 const path = require('path')
+const CleanWebpackPlugin = require('clean-webpack-plugin')
+
 module.exports = {
     context: path.resolve(__dirname, './'),
     entry: {
-        server: './server/index.js'
+        server: './src/server/index.js'
     },
     output: {
         filename: '[name].bundle.js',
@@ -29,5 +31,10 @@ module.exports = {
                 ]
             }
         ]
-    }
+    },
+    plugins: [
+        new CleanWebpackPlugin(['./build/*.*'] ,{
+            root: __dirname,
+        })
+    ]
 }
