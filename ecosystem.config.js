@@ -11,7 +11,7 @@ module.exports = {
             ref: 'origin/master',
             repo: 'git@github.com:rickvlzaa/main_micros.git',
             path: '/home/rick/microservices/main',
-            'post-deploy': 'npm install && pm2 startOrRestart ecosystem.config.js'
+            'post-deploy': 'npm install --only=production && pm2 startOrRestart ecosystem.config.js'
         }
     }
 }
