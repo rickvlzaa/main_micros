@@ -8,7 +8,7 @@ router.get('/', asyncMiddleware(async (req, res) => {
 }));
 
 router.post('/', asyncMiddleware(createUser))
-router.post('/auth', asyncMiddleware(authUser))
+router.get('/auth', asyncMiddleware(authUser))
 
 export default router
 
