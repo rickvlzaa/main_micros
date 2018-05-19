@@ -1,10 +1,17 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
+import morgan from 'morgan';
 
 import routes from '../api/routes';
 
+require('dotenv').config();
+
 const app = express()
+
+if(process.env.NODE_ENV === "development") {
+    app.use(morgan('dev'))
+}
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: false}))

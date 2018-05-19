@@ -8,6 +8,8 @@
     "build": "webpack",
     "watch": "webpack --watch",
     "deploy": "pm2 deploy ecosystem.config.js production",
+    "dev": "webpack --config webpack/dev.js --watch",
+    "dev:start": "nodemon ./index.js",
     "restart": "pm2 startOrRestart ecosystem.config.js"
   },
   "repository": {
@@ -32,10 +34,13 @@
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
+    "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
     "clean-webpack-plugin": "^0.1.19",
+    "morgan": "^1.9.0",
+    "nodemon": "^1.17.4",
     "pm2": "^2.10.4",
     "webpack": "^4.8.3",
     "webpack-cli": "^2.1.3",

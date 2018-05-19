@@ -3,13 +3,13 @@ const path = require('path')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 
 module.exports = {
-    context: path.resolve(__dirname, './'),
+    context: path.resolve(__dirname, '../'),
     entry: {
         server: './src/server/index.js'
     },
     output: {
         filename: '[name].bundle.js',
-        path: path.resolve(__dirname, 'build'),
+        path: path.resolve(__dirname, '../build'),
         publicPath: '/'
     },
     resolve: {
@@ -20,7 +20,7 @@ module.exports = {
         __dirname: true,
         __filename: true
     },
-    mode: 'production',
+    mode: 'development',
     target: 'node',
     externals: [nodeExternals()],
     module: {

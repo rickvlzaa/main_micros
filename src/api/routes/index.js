@@ -1,12 +1,14 @@
 import { Router } from 'express'
-import { createUser } from '../controllers';
-
+import { createUser, authUser } from '../controllers';
+import { asyncMiddleware } from '../../utils';
 const router = Router()
 
-router.get('/', (req, res) => {
+router.get('/', asyncMiddleware(async (req, res) => {
     res.send('please login')
-});
+}));
 
-router.post('/', createUser);
+router.post('/', asyncMiddleware(createUser))
+router.post('/auth', asyncMiddleware(authUser))
 
 export default router
+
