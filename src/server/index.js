@@ -1,7 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
-import morgan from 'morgan';
+// import morgan from 'morgan';
 
 import routes from '../api/routes';
 
