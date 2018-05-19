@@ -20,7 +20,7 @@ app.use(cookieParser())
 app.use('/api', routes);
 
 app.use('/', (req, res) => {
-    res.send('Welcome to my page!')
+    res.send(`request: ${req.url}`)
 })
 
 app.listen(3000)
